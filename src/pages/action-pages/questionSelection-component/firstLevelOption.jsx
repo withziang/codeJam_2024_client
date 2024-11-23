@@ -12,7 +12,7 @@ import PsychologyIcon from "@mui/icons-material/Psychology";
 
 
 
-const FirstLevelOption = () => {
+const FirstLevelOption = ({data, setCurrentStep}) => {
     // ---------------------- hooks --------------------------------------------------
 
     // --------------------- Handle Function -----------------------------------------
@@ -29,7 +29,7 @@ const FirstLevelOption = () => {
                      sx={{
                          borderRadius: '1rem',
                          width: '30rem',
-                         height: '10rem',
+                         height: '9rem',
                          backgroundColor: 'var(--root-custom-color-card-bg-secondary)',
                          display: 'flex',
                          alignItems: 'center',
@@ -38,7 +38,10 @@ const FirstLevelOption = () => {
                      }}>
                     <Stack direction="row" sx={{width: '100%', height: '90%'}}>
                         <Box component="section" sx={{width: '50%', height: '100%'}}>
-                            <Button className="w100 h100">
+                            <Button className="w100 h100" onClick={()=>{
+                                data.current["interviewType"] = "Technical";
+                                setCurrentStep(1);
+                            }}>
                                 <Stack spacing={3} className="center_xy h100">
                                     <TerminalIcon sx={{fontSize: '3rem'}}/>
                                     <h6>Technical</h6>
@@ -50,7 +53,10 @@ const FirstLevelOption = () => {
                                  sx={{height: '90%'}}/>
                         {/*--------------------------------------------------------------------------------*/}
                         <Box component="section" sx={{width: '50%', height: '100%'}}>
-                            <Button className="w100 h100">
+                            <Button className="w100 h100" onClick={()=>{
+                                data.current["interviewType"] = "Behaviour";
+                                setCurrentStep(1);
+                            }}>
                                 <Stack spacing={3} className="center_xy h100">
                                     <PsychologyIcon sx={{fontSize: '3rem'}}/>
                                     <h6>Behaviour</h6>

@@ -82,3 +82,9 @@ html, body {
   align-items: center;
   justify-content: center;
 }
+
+.questionOptionButton{
+  width: 23rem;
+  height: 4rem;
+  background-color: transparent;
+}
