@@ -20,9 +20,7 @@ const VideoRecordingPage = () => {
     // --------------------- HTML ----------------------------------------------------
     return (
         <>
-            <div className="bs-form-customs-mainBackground w100">
 
-            </div>
         </>
     );
 };

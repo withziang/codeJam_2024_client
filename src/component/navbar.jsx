@@ -21,7 +21,7 @@ const Navbar = () => {
     // --------------------- HTML ----------------------------------------------------
     return (
         <>
-            <div className="bs-form-customs-mainBackground w100 d-flex align-items-center" style={{height: '9vh'}}>
+            <div className="w100 d-flex align-items-center" style={{minHeight: '9vh', backgroundColor: ' var(--bs-form-customs-bg-main)'}}>
                 <Stack direction="row" spacing={2} style={{marginLeft:'6vw'}}>
                     <CameraIcon fontSize="large" color="secondary"/>
                     <Typography variant="h5" color="secondary" sx={{fontWeight: 'bold', paddingTop:'2px'}}>

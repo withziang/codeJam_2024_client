@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 // ---------------------------      Bootstrap Lib   ----------------------------------------------------------------
 
 // ---------------------------      Material UI Lib ----------------------------------------------------------------
-import {Stack, Button} from '@mui/material';
+import {Stack, Button, Box} from '@mui/material';
 // ---------------------------      Other Lib       ----------------------------------------------------------------
 
 // ---------------------------      Local Comp      ----------------------------------------------------------------
@@ -61,23 +61,21 @@ const HomePage = () => {
     // --------------------- HTML ----------------------------------------------------
     return (
         <>
-            <div className="bs-form-customs-mainBackground w100 center_xy">
-
-                <Stack direction="row" sx={{width:'80%', height:'92%'}}>
-                    <Stack className="w-50 d-flex justify-content-around" style={{height:'90%'}} spacing={2}>
-                        <p className="mainPageTitle" style={{paddingTop:'10%'}}>Your Customized <br/>
-                            <span style={{fontSize:'65px'}}>Interview Practice</span>
+            <Box className="center_xy w100" style={{minHeight: '91vh'}}>
+                <Stack direction="row" sx={{width: '80%'}} className="center_xy">
+                    <Stack spacing={5} className="w-50 center_xy">
+                        <p className="mainPageTitle">Your Customized <br/>
+                            <span style={{fontSize: '4rem'}}>Interview Practice</span>
                         </p>
-                        <div className="center_xy">
-                            <Button variant="outlined" component={NavLink} to={`/questionSelection-pg`}>Start a new interview</Button>
-                        </div>
+                        <Button variant="outlined" component={NavLink} to={`/questionSelection-pg`}>
+                            Start a new interview</Button>
                     </Stack>
-                    <div className="w-50">
+                    <Box className="w-50 center_xy">
                         <canvas id="canvas" style={{display: 'block', width: '100%'}}></canvas>
-                    </div>
+                    </Box>
                 </Stack>
+            </Box>
 
-            </div>
         </>
     );
 };

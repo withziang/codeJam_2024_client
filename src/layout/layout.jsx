@@ -8,7 +8,7 @@ import NavbarTab from "../component/navbar";
 
 function Layout(props) {
     return (
-        <div>
+        <div className="bs-form-customs-mainBackground">
             <NavbarTab/>
             <Outlet/>
         </div>
