@@ -1,0 +1,31 @@
+:root{
+  --bs-form-customs-bg-main: #1e1f22;
+  --bs-form-customs-logo: #3f4953;
+}
+
+
+.mainPageTitle{
+  background: linear-gradient(to left, #135fb1, #ece4de);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  position: relative;
+  clear: both;
+}
+
+.bs-form-customs-mainBackground{
+  background-color: var(--bs-form-customs-bg-main);
+  height: 91vh;
+}
+
+.center_xy{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-stepper .RFS-step.RFS-active .RFS-label {
+  color: white !important; /* Forces white label for active steps */
+}
