@@ -22,7 +22,7 @@ const QuestionSelection = () => {
     // --------------------- Handle Function -----------------------------------------
     const handleStartInterview = () => {
         if (data.current.cases.length > 0) {
-            window.location.href = (data.current.questionType === "Software") ? "/coding-pg" : "/recording-pg";
+            window.location.href = (data.current.questionType === "Software") ? "/coding-pg" : "/question-pg";
         }else{
             setShowError(true);
         }

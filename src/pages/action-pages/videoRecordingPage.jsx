@@ -3,7 +3,7 @@ import {useEffect, memo, useRef, useState} from 'react'
 // ---------------------------      Bootstrap Lib   ----------------------------------------------------------------
 
 // ---------------------------      Material UI Lib ----------------------------------------------------------------
-import {Stack, Button, Box, Typography, IconButton} from '@mui/material';
+import {Stack, Button, Box, IconButton} from '@mui/material';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 // ---------------------------      Other Lib       ----------------------------------------------------------------
@@ -14,7 +14,13 @@ const VideoRecordingPage = () => {
     // ---------------------- hooks --------------------------------------------------
     const videoRef = useRef(null);
     const [stream, setStream] = useState(null);
+    const [timeLeft, setTimeLeft] = useState(3000);
     // --------------------- Handle Function -----------------------------------------
+
+    const endRecording = () => {
+        window.location.href = 'result-pg';
+    }
+
     const startCamera = async () => {
         try {
             const mediaStream = await navigator.mediaDevices.getUserMedia({
@@ -33,6 +39,7 @@ const VideoRecordingPage = () => {
             const tracks = stream.getTracks();
             tracks.forEach((track) => track.stop()); // Stop all media tracks
             setStream(null); // Clear the stream from the state
+            endRecording();
         }
     };
 
@@ -44,6 +51,16 @@ const VideoRecordingPage = () => {
             stopCamera();
         };
     }, []);
+
+    useEffect(() => {
+        if (timeLeft <= 0) endRecording(); // Stop when the timer reaches 0
+
+        const timer = setInterval(() => {
+            setTimeLeft((prevTime) => prevTime - 1);
+        }, 1000); // Decrease the time every second
+
+        return () => clearInterval(timer); // Cleanup on component unmount or timer reset
+    }, [timeLeft]);
     // --------------------- Other ---------------------------------------------------
 
     // --------------------- Function ------------------------------------------------
@@ -68,6 +85,9 @@ const VideoRecordingPage = () => {
                         <PlayCircleOutlineIcon fontSize="large"/>
                     </IconButton>
                 </Stack>
+                <Box className="d-flex justify-content-end" sx={{width:'80%'}}>
+                    <Button color="primary" onClick={()=>{window.location.href = '/';}} variant="outlined">exit</Button>
+                </Box>
             </Stack>
         </>
     );

@@ -7,7 +7,8 @@ import {Routes, Route} from 'react-router-dom';
 const Layout = React.lazy(() => import('../layout/layout'));
 const HomePage = React.lazy(() => import('../pages/board-pages/homePage'));
 const QuestionSelection = React.lazy(() => import('../pages/action-pages/questionSelection'));
-const VideoRecordingProcess = React.lazy(() => import('../pages/action-pages/videoRecordingProcess'));
+const VideoQuestionPreparationPage = React.lazy(() => import('../pages/action-pages/videoQuestionPreparationPage'));
+const VideoRecordingPage = React.lazy(() => import('../pages/action-pages/videoRecordingPage'));
 const CodingPage = React.lazy(() => import('../pages/action-pages/codingPage'));
 const ResultPage = React.lazy(() => import('../pages/board-pages/resultPage'));
 
@@ -22,7 +23,8 @@ const RouteList = () => (
             <Routes>
                 <Route element={<Layout/>}>
                     <Route exact path="/" element={<HomePage/>}/>
-                    <Route exact path="/recording-pg" element={<VideoRecordingProcess/>}/>
+                    <Route exact path="/question-pg" element={<VideoQuestionPreparationPage/>}/>
+                    <Route exact path="/recording-pg" element={<VideoRecordingPage/>}/>
                     <Route exact path="/questionSelection-pg" element={<QuestionSelection/>}/>
                     <Route exact path="/coding-pg" element={<CodingPage/>}/>
                     <Route exact path="/result-pg" element={<ResultPage/>}/>

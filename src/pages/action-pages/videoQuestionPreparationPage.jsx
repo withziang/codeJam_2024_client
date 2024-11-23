@@ -1,21 +1,26 @@
 // ---------------------------      React Lib       ----------------------------------------------------------------
 import { useState, useEffect, memo} from 'react';
 // ---------------------------      Bootstrap Lib   ----------------------------------------------------------------
-import {Stack, Button, Box, Typography, IconButton} from '@mui/material';
+import {Stack,Divider, Box, Button} from '@mui/material';
 // ---------------------------      Material UI Lib ----------------------------------------------------------------
 
 // ---------------------------      Other Lib       ----------------------------------------------------------------
 
 // ---------------------------      Local Comp      ----------------------------------------------------------------
 
-const VideoRecordingProcess = () => {
+const VideoQuestionPreparationPage = () => {
     // ---------------------- hooks --------------------------------------------------
-    const [timeLeft, setTimeLeft] = useState(30);
+    const [timeLeft, setTimeLeft] = useState(3000);
     // --------------------- Handle Function -----------------------------------------
 
     // --------------------- Other ---------------------------------------------------
+    const goToRecording = () => {
+        window.location.href = 'recording-pg';
+    }
+
+
     useEffect(() => {
-        if (timeLeft <= 0) return; // Stop when the timer reaches 0
+        if (timeLeft <= 0) goToRecording(); // Stop when the timer reaches 0
 
         const timer = setInterval(() => {
             setTimeLeft((prevTime) => prevTime - 1);
@@ -45,10 +50,24 @@ const VideoRecordingProcess = () => {
                 <div style={{textAlign: 'center', fontSize: '24px', color: '#bfbcbc'}}>
                     <p>Time Left: {timeLeft} seconds</p>
                 </div>
+                <Divider variant='middle' color="#ffffff" sx={{width: '80%'}}/>
+                <Box className="d-flex justify-content-begin" sx={{width: '80%', marginTop: '2rem'}}>
+                    <div style={{textAlign: 'center', fontSize: '24px', color: '#bfbcbc'}}>
+                        <p>Question:</p>
+                    </div>
+                </Box>
+                <div style={{textAlign: 'left', fontSize: '15px', color: '#bfbcbc', width: '60%'}}>
+                    <p>{question}</p>
+                </div>
+                <br/>
+                <Stack direction="row" spacing={2}>
+                    <Button color="primary" onClick={()=>{window.location.href = '/';}} variant="outlined">exit</Button>
+                    <Button color="primary" onClick={goToRecording} variant="outlined">Skip the preparation</Button>
+                </Stack>
 
             </Stack>
         </>
     );
 };
 
-export default memo(VideoRecordingProcess);
+export default memo(VideoQuestionPreparationPage);
