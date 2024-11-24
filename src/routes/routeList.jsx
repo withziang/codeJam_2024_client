@@ -1,7 +1,6 @@
 import React, {Suspense} from 'react';
 import {Routes, Route} from 'react-router-dom';
 
-
 //----------------------------    Import Pages   ----------------------------------------------------------------
 
 const Layout = React.lazy(() => import('../layout/layout'));
@@ -17,22 +16,35 @@ const ErrorPage = React.lazy(() => import('../pages/utility-pages/errorPage'));
 const LoadingPage = React.lazy(() => import('../pages/utility-pages/loadingPage'));
 //----------------------------    Routes  ----------------------------------------------------------------
 
-const RouteList = () => (
-    <>
-        <Suspense fallback={<LoadingPage/>}>
-            <Routes>
-                <Route element={<Layout/>}>
-                    <Route exact path="/" element={<HomePage/>}/>
-                    <Route exact path="/question-pg" element={<VideoQuestionPreparationPage/>}/>
-                    <Route exact path="/recording-pg" element={<VideoRecordingPage/>}/>
-                    <Route exact path="/questionSelection-pg" element={<QuestionSelection/>}/>
-                    <Route exact path="/coding-pg" element={<CodingPage/>}/>
-                    <Route exact path="/result-pg" element={<ResultPage/>}/>
-                </Route>
-                <Route path="*" element={<ErrorPage/>}/>
-            </Routes>
-        </Suspense>
-    </>
-);
+
+const RouteList = () => {
+    // ---------------------- hooks --------------------------------------------------
+
+    // --------------------- Handle Function -----------------------------------------
+
+    // --------------------- Other ---------------------------------------------------
+
+    // --------------------- Function ------------------------------------------------
+
+    // --------------------- HTML ----------------------------------------------------
+    return (
+        <>
+            <Suspense fallback={<LoadingPage/>}>
+                <Routes>
+                    <Route element={<Layout/>}>
+                        <Route exact path="/" element={<HomePage/>}/>
+                        <Route exact path="/question-pg" element={<VideoQuestionPreparationPage/>}/>
+                        <Route exact path="/recording-pg" element={<VideoRecordingPage/>}/>
+                        <Route exact path="/questionSelection-pg" element={<QuestionSelection/>}/>
+                        <Route exact path="/coding-pg" element={<CodingPage/>}/>
+                        <Route exact path="/result-pg" element={<ResultPage/>}/>
+                        {/*<Route exact path="/test" element={<VideoRecording/>}/>*/}
+                    </Route>
+                    <Route path="*" element={<ErrorPage/>}/>
+                </Routes>
+            </Suspense>
+        </>
+    );
+};
 
 export default RouteList;

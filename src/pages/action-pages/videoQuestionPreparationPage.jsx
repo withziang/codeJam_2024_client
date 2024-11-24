@@ -1,5 +1,6 @@
 // ---------------------------      React Lib       ----------------------------------------------------------------
-import { useState, useEffect, memo} from 'react';
+import { useState, useEffect, memo, useContext} from 'react';
+
 // ---------------------------      Bootstrap Lib   ----------------------------------------------------------------
 import {Stack,Divider, Box, Button} from '@mui/material';
 // ---------------------------      Material UI Lib ----------------------------------------------------------------
@@ -7,17 +8,18 @@ import {Stack,Divider, Box, Button} from '@mui/material';
 // ---------------------------      Other Lib       ----------------------------------------------------------------
 
 // ---------------------------      Local Comp      ----------------------------------------------------------------
+import {SelectedQuestion} from "../../App";
 
 const VideoQuestionPreparationPage = () => {
     // ---------------------- hooks --------------------------------------------------
     const [timeLeft, setTimeLeft] = useState(3000);
+    const context = useContext(SelectedQuestion);
     // --------------------- Handle Function -----------------------------------------
 
     // --------------------- Other ---------------------------------------------------
     const goToRecording = () => {
-        window.location.href = 'recording-pg';
+        window.location.href = '/recording-pg';
     }
-
 
     useEffect(() => {
         if (timeLeft <= 0) goToRecording(); // Stop when the timer reaches 0
@@ -29,18 +31,9 @@ const VideoQuestionPreparationPage = () => {
         return () => clearInterval(timer); // Cleanup on component unmount or timer reset
     }, [timeLeft]);
 
-    const question = "Here’s a concise 100-word mock interview response for a typical behavioral question:\n" +
-        "\n" +
-        "Question: \"Can you tell me about a time you solved a challenging problem?\"\n" +
-        "\n" +
-        "Response:\n" +
-        "During my internship, " +
-        "I worked on a project to improve data processing efficiency. " +
-        "We faced frequent crashes due to memory limitations. " +
-        "After analyzing logs, I identified inefficient loops as the issue. " +
-        "I proposed using batching to reduce memory usage, tested it, and saw a 40% performance improvement. " +
-        "The process required debugging under tight deadlines, " +
-        "but I collaborated with teammates for optimization ideas. This taught me to approach problems systematically, communicate effectively, and document solutions for future use. The success was rewarding, and the code was later implemented in production, benefiting the team long-term."
+    useEffect(() => {
+        console.log(context.question);
+    }, [context.question])
     // --------------------- Function ------------------------------------------------
 
     // --------------------- HTML ----------------------------------------------------
@@ -57,7 +50,7 @@ const VideoQuestionPreparationPage = () => {
                     </div>
                 </Box>
                 <div style={{textAlign: 'left', fontSize: '15px', color: '#bfbcbc', width: '60%'}}>
-                    <p>{question}</p>
+                    <p>{context.question}</p>
                 </div>
                 <br/>
                 <Stack direction="row" spacing={2}>

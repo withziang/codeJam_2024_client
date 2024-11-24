@@ -1,5 +1,6 @@
 // ---------------------------      React Lib       ----------------------------------------------------------------
-import { useState, useEffect, memo, useMemo, useRef } from 'react';
+import {useState, useEffect, memo, useRef, useContext} from 'react';
+
 // ---------------------------      Bootstrap Lib   ----------------------------------------------------------------
 import {Stack,Divider, Box, Button} from '@mui/material';
 // ---------------------------      Material UI Lib ----------------------------------------------------------------
@@ -7,12 +8,17 @@ import {Stack,Divider, Box, Button} from '@mui/material';
 // ---------------------------      Other Lib       ----------------------------------------------------------------
 import { useCodeMirror } from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
+import {SelectedQuestion} from "../../App";
+
 // ---------------------------      Local Comp      ----------------------------------------------------------------
+
 
 const CodingPage = () => {
     // ---------------------- hooks --------------------------------------------------
 
     const [timeLeft, setTimeLeft] = useState(3000);
+
+    const { question } = useContext(SelectedQuestion);
 
     const editor = useRef(null);
     const { setContainer } = useCodeMirror({
@@ -52,18 +58,7 @@ const CodingPage = () => {
         return () => clearInterval(timer); // Cleanup on component unmount or timer reset
     }, [timeLeft]);
 
-    const question = "Here’s a concise 100-word mock interview response for a typical behavioral question:\n" +
-        "\n" +
-        "Question: \"Can you tell me about a time you solved a challenging problem?\"\n" +
-        "\n" +
-        "Response:\n" +
-        "During my internship, " +
-        "I worked on a project to improve data processing efficiency. " +
-        "We faced frequent crashes due to memory limitations. " +
-        "After analyzing logs, I identified inefficient loops as the issue. " +
-        "I proposed using batching to reduce memory usage, tested it, and saw a 40% performance improvement. " +
-        "The process required debugging under tight deadlines, " +
-        "but I collaborated with teammates for optimization ideas. This taught me to approach problems systematically, communicate effectively, and document solutions for future use. The success was rewarding, and the code was later implemented in production, benefiting the team long-term."
+
     // --------------------- HTML ----------------------------------------------------
     return (
         <>

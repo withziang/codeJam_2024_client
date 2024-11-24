@@ -1,13 +1,17 @@
-import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import RouteList from './routes/routeList';
+import {createContext, useState} from "react";
 
 //---------------------------- General     CSS ----------------------------------------------------------------------
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 //---------------------------- main   --------------------------------------------------------------------------------
+
+export const SelectedQuestion = createContext();
+
 const App = () => {
     const theme = createTheme({
         palette: {
@@ -34,11 +38,17 @@ const App = () => {
             },
         },
     });
+
+    const [question, setQuestion] = useState('xxx');
+
+
     return (
         <>
             <ThemeProvider theme={theme}>  {/*color theme for materialUI*/}
                 <BrowserRouter>
-                    <RouteList/>
+                    <SelectedQuestion.Provider value={{ question, setQuestion}}>
+                        <RouteList/>
+                    </SelectedQuestion.Provider>
                 </BrowserRouter>
             </ThemeProvider>
         </>
