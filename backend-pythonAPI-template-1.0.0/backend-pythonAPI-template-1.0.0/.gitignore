@@ -1,0 +1,11 @@
+.venv
+
+build
+
+dist
+
+my_project.egg-info
+
+flask_session
+
+__pycache__
