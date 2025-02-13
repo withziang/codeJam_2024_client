@@ -23,16 +23,16 @@
   <div>
     <img src="https://avatars.githubusercontent.com/u/91577770?v=4" alt="BariHub" width="100" style="text-decoration: none;display:inline-block; border-radius: 50%;">
     <br>
-    <a href="https://github.com/BariHub"><strong>Eric</strong></a>
+    <a href="https://github.com/Lawnless1"><strong>Eric</strong></a>
   </div>
   <!-- End contributor block -->
 
   <!-- Add more contributor blocks as needed -->
 
   <div>
-    <img src="https://avatars.githubusercontent.com/u/108089675?v=4" alt="AevisMotax" width="100" style="text-decoration: none;display:inline-block; border-radius: 50%;">
+    <img src="https://avatars.githubusercontent.com/u/54916212?v=4" alt="AevisMotax" width="100" style="text-decoration: none;display:inline-block; border-radius: 50%;">
     <br>
-    <a href="https://github.com/AevisMotax"><strong>Edi</strong></strong></a>
+    <a href="https://github.com/austinkol"><strong>Austin</strong></strong></a>
   </div>
   <!-- End contributor block -->
 
