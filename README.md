@@ -4,7 +4,7 @@
 - Using bootstrap for css, react-bootstrap and material UI as component
 
 
-# [Devpost]https://devpost.com/software/mockterview?ref_content=my-projects-tab&ref_feature=my_projects)
+# [Devpost](https://devpost.com/software/mockterview?ref_content=my-projects-tab&ref_feature=my_projects)
 
 ## Available Scripts
 
