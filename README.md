@@ -6,6 +6,53 @@
 
 # [Devpost](https://devpost.com/software/mockterview?ref_content=my-projects-tab&ref_feature=my_projects)
 
+## Team members
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<div style="display: flex; ">
+
+  <!-- Add this block for each contributor -->
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/91577770?v=4" alt="BariHub" width="100" style="text-decoration: none;display:inline-block; border-radius: 50%;">
+    <br>
+    <a href="https://github.com/BariHub"><strong>Eric</strong></a>
+  </div>
+  <!-- End contributor block -->
+
+  <!-- Add more contributor blocks as needed -->
+
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/108089675?v=4" alt="AevisMotax" width="100" style="text-decoration: none;display:inline-block; border-radius: 50%;">
+    <br>
+    <a href="https://github.com/AevisMotax"><strong>Edi</strong></strong></a>
+  </div>
+  <!-- End contributor block -->
+
+  <!-- Add more contributor blocks as needed -->
+
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/66443081?v=4" alt="DonTizi" width="100" style="text-decoration: none;display:inline-block; border-radius: 50%;">
+    <br>
+    <a href="https://github.com/DonTizi"><strong>DonTizi</strong></a>
+  </div>
+  <!-- End contributor block -->
+
+  <!-- Add more contributor blocks as needed -->
+
+</div>
+
+
+
+
+
 ## Available Scripts
 
 Client in client branch
